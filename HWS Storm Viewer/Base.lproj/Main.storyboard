@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -63,6 +64,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VAu-ER-H5g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-93.75" y="-206.25"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="YPZ-OC-oIJ">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OrE-9o-GtK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="Detail" id="cBE-8u-jqE" customClass="DetailViewController" customModule="HWS_Storm_Viewer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VuI-cI-HQ2">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="r1x-nG-z8H">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gNI-1l-nU3"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="r1x-nG-z8H" firstAttribute="leading" secondItem="gNI-1l-nU3" secondAttribute="leading" id="F8B-hy-nvU"/>
+                            <constraint firstItem="gNI-1l-nU3" firstAttribute="bottom" secondItem="r1x-nG-z8H" secondAttribute="bottom" id="fUS-48-XGW"/>
+                            <constraint firstItem="gNI-1l-nU3" firstAttribute="trailing" secondItem="r1x-nG-z8H" secondAttribute="trailing" id="kLX-gP-Toy"/>
+                            <constraint firstItem="r1x-nG-z8H" firstAttribute="top" secondItem="gNI-1l-nU3" secondAttribute="top" id="lMq-fb-rlw"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="r1x-nG-z8H" id="KSq-LM-Oi4"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1424" y="-206"/>
         </scene>
     </scenes>
     <resources>
