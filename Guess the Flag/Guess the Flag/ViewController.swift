@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     var countries = [String]()
     var correctAnswer = 0
     var playerScore = 0
+    var questionCount = 0
     
     
     override func viewDidLoad() {
@@ -37,6 +38,11 @@ class ViewController: UIViewController {
     
     func askQuestion(action: UIAlertAction! = nil) {
         
+        if questionCount >= 10 {
+            questionCount = 0
+            playerScore = 0
+        }
+        
         countries.shuffle()
         
         Button1.setImage(UIImage(named: countries[0]), for: .normal)
@@ -44,24 +50,37 @@ class ViewController: UIViewController {
         Button3.setImage(UIImage(named: countries[2]), for: .normal)
         
         correctAnswer = Int.random(in: 0...2)
+
+        title = "Score: \(playerScore) | "
+        title? += countries[correctAnswer].uppercased()
         
-        title = countries[correctAnswer].uppercased()
+        questionCount += 1
         
     }
     
+    // This outlet was dragged from IB and then connected to all buttons
     @IBAction func buttonTapped(_ sender: UIButton) {
+        
         var title: String
         if sender.tag == correctAnswer {
             title = "Correct"
             playerScore += 1
         } else {
-            title = "Wrong"
+            title = "Wrong, that's the flag of \(countries[sender.tag].capitalized)"
             playerScore -= 1
         }
         
-        let ac = UIAlertController(title: title, message: "Your score is \(playerScore)", preferredStyle: .alert)
-        ac.addAction(UIAlertAction(title: "Continue", style: .default, handler: askQuestion))
-        present(ac, animated: true)
+        var alertMessage = "Your score is \(playerScore)\n Questions remaining \(10 - questionCount)"
+        var alertActionTitle = "Continue"
+        
+        if questionCount >= 10 {
+            alertMessage = "Game Over! \n Final Score: \(playerScore)"
+            alertActionTitle = "Play Again"
+        }
+        
+        let alertController = UIAlertController(title: title, message: alertMessage, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: alertActionTitle, style: .default, handler: askQuestion))
+        present(alertController, animated: true)
     }
     
     
