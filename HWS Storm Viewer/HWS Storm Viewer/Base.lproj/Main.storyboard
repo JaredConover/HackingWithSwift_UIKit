@@ -68,7 +68,6 @@
         <!--Detail View Controller-->
         <scene sceneID="YPZ-OC-oIJ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OrE-9o-GtK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="Detail" id="cBE-8u-jqE" customClass="DetailViewController" customModule="HWS_Storm_Viewer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VuI-cI-HQ2">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
@@ -91,6 +90,7 @@
                         <outlet property="imageView" destination="r1x-nG-z8H" id="KSq-LM-Oi4"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OrE-9o-GtK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1424" y="-206"/>
         </scene>
