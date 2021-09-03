@@ -21,6 +21,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(showScore))
+        
         // This modifies the CALayer property that sits beneath all UIViews
         Button1.layer.borderWidth = 1
         Button2.layer.borderWidth = 1
@@ -51,8 +53,7 @@ class ViewController: UIViewController {
         
         correctAnswer = Int.random(in: 0...2)
 
-        title = "Score: \(playerScore) | "
-        title? += countries[correctAnswer].uppercased()
+        title = countries[correctAnswer].uppercased()
         
         questionCount += 1
         
@@ -83,6 +84,11 @@ class ViewController: UIViewController {
         present(alertController, animated: true)
     }
     
+    @objc func showScore() {
+        let alertController = UIAlertController(title: "Your Score: ", message: "\(playerScore)", preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Close", style: .cancel, handler: .none))
+        present(alertController, animated: true)
+    }
     
 }
 
