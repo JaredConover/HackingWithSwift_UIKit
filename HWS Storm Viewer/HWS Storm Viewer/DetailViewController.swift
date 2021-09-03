@@ -17,6 +17,7 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // navigationItem is a property of the view controller
         navigationItem.largeTitleDisplayMode = .never
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareTapped))
 
@@ -42,7 +43,7 @@ class DetailViewController: UIViewController {
             return
         }
         
-        let activityViewController = UIActivityViewController(activityItems: [image], applicationActivities: [])
+        let activityViewController = UIActivityViewController(activityItems: [image, selectedImage ?? ""], applicationActivities: [])
         
         // The line below will anchor the popover to the right button item on iPad, on iPhone there is no effect
         activityViewController.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
