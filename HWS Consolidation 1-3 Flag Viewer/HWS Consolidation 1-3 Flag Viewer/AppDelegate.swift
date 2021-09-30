@@ -1,13 +1,15 @@
 //
 //  AppDelegate.swift
-//  Guess the Flag
+//  HWS Consolidation 1-3 Flag Viewer
 //
-//  Created by Jared Conover on 2021-08-20.
+//  Created by Jared Conover on 2021-09-08.
 //
+
 import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
+
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
